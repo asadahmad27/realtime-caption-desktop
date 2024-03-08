@@ -21,9 +21,9 @@
   },
   "license": "MIT",
   "author": {
-    "name": "Electron React Boilerplate Maintainers",
-    "email": "electronreactboilerplate@gmail.com",
-    "url": "https://electron-react-boilerplate.js.org"
+    "name": "Zweidevs",
+    "email": "asad.ahmad@zweidevs.com",
+    "url": "https://www.abc.com"
   },
   "contributors": [
     {
@@ -47,7 +47,7 @@
     "start:preload": "cross-env NODE_ENV=development TS_NODE_TRANSPILE_ONLY=true webpack --config ./.erb/configs/webpack.config.preload.dev.ts",
     "start:renderer": "cross-env NODE_ENV=development TS_NODE_TRANSPILE_ONLY=true webpack serve --config ./.erb/configs/webpack.config.renderer.dev.ts",
     "test": "jest",
-    "dist-all":"electron-builder -mwl"
+    "dist-all": "electron-builder -mwl"
   },
   "browserslist": [],
   "prettier": {
@@ -97,12 +97,22 @@
     }
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.2.1",
+    "antd": "^5.15.0",
+    "axios": "^1.6.7",
     "electron-debug": "^3.2.0",
     "electron-log": "^4.4.8",
     "electron-updater": "^6.1.4",
+    "epubjs": "^0.3.93",
+    "i18next": "^23.10.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.16.0"
+    "react-i18next": "^14.0.5",
+    "react-icons": "^5.0.1",
+    "react-redux": "^9.1.0",
+    "react-router-dom": "^6.22.2",
+    "react-slick": "^0.30.2",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@electron/notarize": "^2.1.0",
@@ -116,6 +126,7 @@
     "@types/node": "20.6.2",
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
+    "@types/react-slick": "^0.23.13",
     "@types/react-test-renderer": "^18.0.1",
     "@types/terser-webpack-plugin": "^5.0.4",
     "@types/webpack-bundle-analyzer": "^4.6.0",
@@ -172,7 +183,7 @@
     "webpack-merge": "^5.9.0"
   },
   "build": {
-    "productName": "AABBooks",
+    "productName": "AAb Books",
     "appId": "org.erb.ElectronReact",
     "asar": true,
     "asarUnpack": "**\\*.{node,dll}",

@@ -1,0 +1,72 @@
+.loginContainer {
+    position: relative;
+    background: #EBEEF4;
+    height: 100vh;
+}
+
+.loginForm {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40.8%;
+    max-width: 585px;
+    height: 631px;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 91px 80px 100px 80px;
+    border-radius: 12px;
+    box-shadow: 0px 1px 3px 0px #0000001A;
+}
+
+.logoContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 65px;
+}
+
+.emailInputContainer {
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.passwordInputContainer {
+    width: 100%;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.forgotPasswordContainer {
+    text-align: end;
+    padding: 20px 0px;
+}
+
+.forgotPasswordContainer p {
+    font-family: "Inter", sans-serif;
+    color: #989898;
+    font-weight: 400;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.forgotPasswordContainer p:hover {
+    text-decoration: underline;
+}
+
+input {
+    width: 100%;
+    padding: 20px;
+    font-size: 16px;
+    border: 1.56px solid #989898;
+    border-radius: 7.78px;
+}
+
+input::placeholder {
+    font-family: "Inter", sans-serif;
+}
+
+.ant-input-affix-wrapper {
+    padding: 0 11px;
+}

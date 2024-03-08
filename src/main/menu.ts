@@ -57,14 +57,14 @@ export default class MenuBuilder {
       label: 'Electron',
       submenu: [
         {
-          label: 'About ElectronReact',
+          label: 'About AAB Books',
           selector: 'orderFrontStandardAboutPanel:',
         },
         { type: 'separator' },
         { label: 'Services', submenu: [] },
         { type: 'separator' },
         {
-          label: 'Hide ElectronReact',
+          label: 'Hide App',
           accelerator: 'Command+H',
           selector: 'hide:',
         },
@@ -136,6 +136,12 @@ export default class MenuBuilder {
             this.mainWindow.setFullScreen(!this.mainWindow.isFullScreen());
           },
         },
+        {
+          label: 'Inspect element',
+          click: () => {
+            this.mainWindow.webContents.toggleDevTools();
+          },
+        },
       ],
     };
     const subMenuWindow: DarwinMenuItemConstructorOptions = {
@@ -158,6 +164,12 @@ export default class MenuBuilder {
           label: 'Learn More',
           click() {
             shell.openExternal('https://electronjs.org');
+          },
+        },
+        {
+          label: 'Inspect element',
+          click: () => {
+            this.mainWindow.webContents.toggleDevTools();
           },
         },
         {
@@ -205,7 +217,14 @@ export default class MenuBuilder {
             label: '&Close',
             accelerator: 'Ctrl+W',
             click: () => {
-              this.mainWindow.close();
+              this.mainWindow.webContents.toggleDevTools();
+            },
+          },
+          {
+            label: '&test',
+            accelerator: 'Ctrl+W',
+            click: () => {
+              this.mainWindow.webContents.toggleDevTools();
             },
           },
         ],
@@ -250,6 +269,12 @@ export default class MenuBuilder {
                     );
                   },
                 },
+                {
+                  label: 'Inspect element',
+                  click: () => {
+                    this.mainWindow.webContents.inspectElement(10, 10);
+                  },
+                },
               ],
       },
       {
@@ -259,6 +284,12 @@ export default class MenuBuilder {
             label: 'Learn More',
             click() {
               shell.openExternal('https://electronjs.org');
+            },
+          },
+          {
+            label: 'Inspect element',
+            click: () => {
+              this.mainWindow.webContents.inspectElement(10, 10);
             },
           },
           {

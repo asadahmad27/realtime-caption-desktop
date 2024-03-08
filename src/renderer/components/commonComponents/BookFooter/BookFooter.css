@@ -1,0 +1,85 @@
+.BookFooter {
+    border-radius: 12px;
+    background: white;
+    padding: 15px;
+}
+
+.BookFooter .ant-row .ant-col:first-child,
+.BookFooter .ant-row .ant-col:last-child {
+    flex: 0 0 40%;
+    max-width: 40%;
+}
+
+.BookFooter .ant-row .ant-col:nth-child(2) {
+    flex: 0 0 20%;
+    max-width: 20%;
+}
+
+.pageNumberHanlder {
+    display: flex;
+    align-items: center;
+}
+
+.pageNumbers {
+    background: #e3f0f5;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin-left: 8px;
+    border-radius: 4px;
+}
+
+.currentPageNumber {
+    width: 100%;
+    padding: 0;
+    background: transparent;
+    border: none;
+    outline: none;
+    text-align: center;
+}
+
+.currentPageNumber::-webkit-inner-spin-button,
+.currentPageNumber::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.zoomButtons {
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.zoomValue {
+    background: #e3f0f5;
+    padding: 10px;
+    border-radius: 4px;
+    width: 55px;
+    text-align: center;
+}
+
+.pageNumberHandler {
+    display: flex;
+    align-items: center;
+}
+
+.bookProgress .ant-progress-outer .ant-progress-inner {
+    border: 1px solid #99b82d;
+}
+
+.bookProgress .ant-progress-outer {
+    width: 105% !important;
+}
+
+.value {
+    color: #99b82d;
+}
+
+.nextSec,
+.prevSec {
+    height: 45px;
+}

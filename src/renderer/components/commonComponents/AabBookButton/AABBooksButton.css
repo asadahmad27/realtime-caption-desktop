@@ -1,0 +1,17 @@
+.button {
+    padding: 18px 20px;
+    background-color: var(--primaryButton);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: "Inter", sans-serif;
+    cursor: pointer;
+    height: 54px;
+    line-height: 0px;
+}
+
+.button:hover {
+    background-color: var(--primaryButton) !important;
+}

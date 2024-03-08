@@ -1,0 +1,58 @@
+.text {
+    background-color: black;
+}
+
+.newText {
+    color: red;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.epub-container::-webkit-scrollbar {
+    width: 12px;
+    /* Set the width of the scrollbar */
+}
+
+.epub-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 6px;
+}
+
+.epub-container::-webkit-scrollbar-thumb {
+    background: #aecfff;
+    border-radius: 6px;
+}
+
+.epub-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.pageNumbersFooter span {
+    display: flex;
+    cursor: pointer;
+}
+
+.pageNumbersFooter p {
+    font-size: 0.9rem;
+    font-family: "Liberation Serif", serif;
+    margin: auto 0 3px 0;
+}
+
+.pageNumbersFooter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.singlePageMode {
+    justify-content: center;
+}
+
+.multiplePageMode {
+    justify-content: space-around;
+}
+
+.noMarginBottom {
+    margin-bottom: 0px !important;
+}
