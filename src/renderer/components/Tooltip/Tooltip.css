@@ -1,0 +1,8 @@
+.chapterTitleInfo .ant-tooltip-arrow::before {
+    background: white;
+}
+
+.chapterTitleInfo .ant-tooltip-inner {
+    background-color: white;
+    font-size: 12px;
+}

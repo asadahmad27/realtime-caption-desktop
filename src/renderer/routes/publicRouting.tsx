@@ -8,11 +8,7 @@ interface PublicRouteProps {
 }
 
 const PublicRoute: React.FC<PublicRouteProps> = ({ children, restricted }) => {
-  return getToken() && restricted ? (
-    <Navigate to="/dashboard" />
-  ) : (
-    <>{children}</>
-  );
+  return getToken() && restricted ? <Navigate to="/home" /> : <>{children}</>;
 };
 
 export default PublicRoute;

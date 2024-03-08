@@ -135,6 +135,13 @@ export default class MenuBuilder {
           click: () => {
             this.mainWindow.setFullScreen(!this.mainWindow.isFullScreen());
           },
+
+        },
+        {
+          label: 'Inspect element',
+          click: () => {
+            this.mainWindow.webContents.toggleDevTools();
+          },
         },
       ],
     };
@@ -158,6 +165,12 @@ export default class MenuBuilder {
           label: 'Learn More',
           click() {
             shell.openExternal('https://electronjs.org');
+          },
+        },
+        {
+          label: 'Inspect element',
+          click: () => {
+            this.mainWindow.webContents.toggleDevTools();
           },
         },
         {
@@ -205,7 +218,14 @@ export default class MenuBuilder {
             label: '&Close',
             accelerator: 'Ctrl+W',
             click: () => {
-              this.mainWindow.close();
+              this.mainWindow.webContents.toggleDevTools();
+            },
+          },
+          {
+            label: '&test',
+            accelerator: 'Ctrl+W',
+            click: () => {
+              this.mainWindow.webContents.toggleDevTools();
             },
           },
         ],
@@ -250,6 +270,12 @@ export default class MenuBuilder {
                     );
                   },
                 },
+                {
+                  label: 'Inspect element',
+                  click: () => {
+                    this.mainWindow.webContents.inspectElement(10, 10);
+                  },
+                },
               ],
       },
       {
@@ -259,6 +285,12 @@ export default class MenuBuilder {
             label: 'Learn More',
             click() {
               shell.openExternal('https://electronjs.org');
+            },
+          },
+          {
+            label: 'Inspect element',
+            click: () => {
+              this.mainWindow.webContents.inspectElement(10, 10);
             },
           },
           {

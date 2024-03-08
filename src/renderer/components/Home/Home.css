@@ -1,0 +1,30 @@
+.dashboardContent {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    margin: 30px 40px;
+    transition: all 0.3s;
+}
+
+.booksHeading,
+.compilationsHeading {
+    font-size: 1.25rem;
+    font-family: "Inter";
+    font-weight: 500;
+    line-height: 22px;
+}
+
+.booksHeading {
+    margin: 20px 20px;
+}
+
+.compilationsHeading {
+    margin: 20px 20px;
+}
+
+.booksContainer {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 50px;
+    justify-content: space-between;
+}

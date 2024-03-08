@@ -1,0 +1,106 @@
+.bookList {
+    position: fixed;
+    top: 110px;
+    left: 30%;
+    width: 65%;
+    border-radius: 12px;
+    border: 2px solid #f2f4f8;
+    background: #fff;
+    transition: all 0.3s ease;
+}
+
+.bookListHide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.bookListShow {
+    opacity: 1;
+    z-index: 99999;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    pointer-events: all;
+}
+
+.selectDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+}
+
+.selectBooks {
+    margin: auto 0;
+    color: #262626;
+    font-family: DM Sans;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.selectDiv {
+    /* font-family: DM Sans; */
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.unselectAll,
+.unselectAll:hover {
+    color: #99b82d !important;
+    /* font-family: DM Sans; */
+    font-size: 20px;
+    font-weight: 500;
+    text-decoration-line: underline !important;
+    padding: 0;
+}
+
+.unselectAll span {
+    text-decoration: underline;
+}
+
+.books {
+    padding: 0% 5%;
+}
+
+.singleBookName {
+    margin: 2% 0;
+}
+
+.booksOptionsContainer {
+    align-items: center;
+}
+
+.ant-checkbox-inner {
+    background-color: #e3f0f5 !important;
+}
+
+.ant-checkbox-checked .ant-checkbox-inner {
+    background-color: #99b82d !important;
+    border-color: #99b82d;
+}
+
+.ant-checkbox-wrapper:hover .ant-checkbox-checked .ant-checkbox-inner {
+    background-color: #99b82d !important;
+    border-color: #99b82d !important;
+}
+
+.ant-checkbox-checked:hover .ant-checkbox-checked .ant-checkbox-inner {
+    background-color: #99b82d !important;
+    border-color: #99b82d !important;
+}
+
+.ant-checkbox-checked:after {
+    border-color: #99b82d !important;
+}
+
+.ant-checkbox:hover::after {
+    border-color: #99b82d !important;
+}
+
+.ant-checkbox:hover .ant-checkbox-inner {
+    border-color: #99b82d !important;
+}
+
+.exactWords {
+    pointer-events: none;
+    cursor: not-allowed;
+}

@@ -4,8 +4,8 @@
     border: none;
     border-radius: 5px;
     color: white;
-    font-size: 1.25rem;
-    font-weight: 500;
+    font-size: 1rem;
+    font-weight: 400;
     font-family: "Inter", sans-serif;
     cursor: pointer;
     height: 54px;
@@ -13,5 +13,5 @@
 }
 
 .button:hover {
-    background-color: var(--primaryButton);
+    background-color: var(--primaryButton) !important;
 }

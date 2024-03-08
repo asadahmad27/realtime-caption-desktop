@@ -26,6 +26,16 @@
     color: rgb(255 255 255 / 25%);
 }
 
-.ant-input-affix-wrapper>input.ant-input {
-    height: 50px;
+.ant-input-affix-wrapper .anticon.ant-input-password-icon {
+    display: none;
+}
+
+
+
+.passwordToggle {
+    position: absolute;
+    right: 15px;
+    top: 20px;
+    font-size: large;
+    color: #808080;
 }

@@ -9,6 +9,8 @@
     top: 50%;
     left: 50%;
     width: 40.8%;
+    max-width: 585px;
+    height: 631px;
     transform: translate(-50%, -50%);
     background-color: white;
     padding: 91px 80px 100px 80px;
@@ -45,17 +47,26 @@ label {
     font-family: "Inter", sans-serif;
     color: #989898;
     font-weight: 400;
+    cursor: pointer;
     font-size: 0.9rem;
+}
+
+.forgotPasswordContainer p:hover {
+    text-decoration: underline;
 }
 
 input {
     width: 100%;
     padding: 20px;
     font-size: 16px;
-    border: 1px solid #B7B7B7;
-    border-radius: 4px;
+    border: 1.56px solid #989898;
+    border-radius: 7.78px;
 }
 
 input::placeholder {
     font-family: "Inter", sans-serif;
+}
+
+.ant-input-affix-wrapper {
+    padding: 0 11px;
 }

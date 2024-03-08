@@ -1,0 +1,57 @@
+.contentContainer {
+    min-height: 100%;
+    border-radius: 12px;
+}
+
+.browserBack {
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.booksNav {
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: -2%;
+}
+
+.prevSec {
+    border-radius: 12px;
+    border: 1px solid #dfe9be;
+    background: rgba(175, 200, 92, 0.34);
+    color: #686c5a;
+}
+
+.nextSec {
+    border-radius: 12px;
+}
+
+.prevSec:hover {
+    color: #686c5a !important;
+    border: 1px solid #dfe9be !important;
+}
+
+.progValue {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 6%;
+}
+
+.bookProgress .ant-progress-text {
+    display: none;
+}
+
+.bookProgress .ant-progress-bg {
+    background-color: #afc85c;
+}
+
+.buttonsContainer {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    justify-content: center;
+    border-right: 1px solid #c5c5c5;
+    border-left: 1px solid #c5c5c5;
+    padding: 0 10px;
+}

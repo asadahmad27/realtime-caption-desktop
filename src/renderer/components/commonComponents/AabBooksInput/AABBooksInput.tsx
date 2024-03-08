@@ -1,39 +1,56 @@
 import React, { forwardRef, useState } from 'react';
 import { Form, Input } from 'antd';
+import PasswordEyeIcon from '../../../../../assets/iconsCustom/passwordEyeIcon.svg';
 import './AABBooksInput.css';
 
-interface AABBooksInputsProps {
-  name: string;
-  value: string;
-  placeholder: string;
+interface AABBooksInputProps {
+  name?: string;
+  placeholder?: string;
   rules?: Array<any>;
   ref?: any;
+  value?: string;
   className?: any;
   onChange?: (_e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const AABBooksInputs = forwardRef<HTMLInputElement, AABBooksInputsProps>(
+const AABBooksInput = forwardRef<HTMLInputElement, AABBooksInputProps>(
   ({ name, value, placeholder, rules, ...restProps }, ref) => {
     const isPassword = name === 'password' || name === 'confirmpassword';
+    const [passwordVisible, setPasswordVisible] = useState(false);
+
+    const togglePasswordVisibility = () => {
+      setPasswordVisible(!passwordVisible);
+    };
 
     return (
       <>
         <Form.Item name={name} rules={rules} className="inputStyle">
           {isPassword ? (
             <div style={{ position: 'relative' }}>
-              <Input.Password
-                type={'password'}
+              <Input
+                type={passwordVisible ? 'text' : 'password'}
                 placeholder={placeholder}
-                value={value}
                 autoComplete="off"
                 {...restProps}
               />
+              {!passwordVisible ? (
+                <img
+                  src={PasswordEyeIcon}
+                  className="passwordToggle"
+                  onClick={togglePasswordVisibility}
+                />
+              ) : (
+                <img
+                  src={PasswordEyeIcon}
+                  className="passwordToggle"
+                  onClick={togglePasswordVisibility}
+                />
+              )}
             </div>
           ) : (
             <Input
               placeholder={placeholder}
               autoComplete="off"
-              value={value}
               aria-autocomplete="none"
               ref={ref}
               {...restProps}
@@ -44,4 +61,4 @@ const AABBooksInputs = forwardRef<HTMLInputElement, AABBooksInputsProps>(
     );
   },
 );
-export default AABBooksInputs;
+export default AABBooksInput;

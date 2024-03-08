@@ -1,0 +1,105 @@
+.primarySidebar {
+    height: 100vh;
+    width: 21%;
+    z-index: 5;
+    position: fixed;
+    top: 0px;
+}
+
+.padLeft {
+    padding-left: 14%;
+}
+
+.sidebarContainer {
+    width: 100%;
+    transition: width 0.3s ease-out;
+    box-shadow: 2px 4px 30px 0px rgba(0, 0, 0, 0.08);
+    background: white !important;
+}
+
+.chaptersList .ant-menu.ant-menu-sub.ant-menu-inline {
+    background: #e3f0f5;
+    color: #393f47;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+}
+
+.chaptersList .ant-menu-submenu.ant-menu-submenu-inline .ant-menu-submenu-title span {
+    font-family: Inter;
+    font-weight: 500;
+}
+
+.chaptersList .ant-menu-submenu.ant-menu-submenu-inline .ant-menu.ant-menu-sub .ant-menu .ant-menu-item span {
+    padding-left: 10px !important;
+}
+
+.chaptersList .ant-menu-submenu.ant-menu-submenu-inline .ant-menu.ant-menu-sub .ant-menu-submenu-title {
+    padding-left: 15px !important;
+}
+
+.chaptersList .ant-menu-submenu.ant-menu-submenu-inline .ant-menu.ant-menu-sub .ant-menu-submenu-title span {
+    font-size: 12px !important;
+}
+
+.chaptersList .ant-menu-submenu-title {
+    padding-left: 23px !important;
+    width: 100%;
+    margin: 0;
+}
+
+.chaptersList .ant-menu-submenu.ant-menu-submenu-open.ant-menu-submenu-selected .ant-menu-submenu-title svg rect,
+.chaptersList .ant-menu-submenu.ant-menu-submenu-open.ant-menu-submenu-selected .ant-menu-submenu-title svg path {
+    fill: #afc85c !important;
+    stroke: white;
+}
+
+.chaptersList .ant-menu-submenu-title .ant-menu-title-content {
+    margin-left: 12px !important;
+}
+
+.ant-menu-submenu-selected.ant-menu-submenu-open {
+    background: #e3f0f5;
+}
+
+.ant-menu-item.ant-menu-item-selected.ant-menu-item-only-child {
+    background: white !important;
+    color: #afc85c;
+}
+
+.ant-menu-item {
+    padding-left: 27px !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    width: 100%;
+}
+
+.chaptersList .ant-menu-submenu {
+    border-radius: 0;
+}
+
+.ant-menu-submenu-selected.ant-menu-submenu-open>.ant-menu-submenu-title:first-child {
+    position: sticky;
+    top: 0px;
+    z-index: 5;
+    background: #e3f0f5 !important;
+    color: #afc85c;
+}
+
+.chaptersList .ant-menu.ant-menu-sub.ant-menu-inline .ant-menu-item-only-child,
+.chaptersList .ant-menu.ant-menu-sub.ant-menu-inline div.ant-menu-submenu-title {
+    height: 28px;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    width: 100%;
+}
+
+.skelotonParant {
+    padding: 20px;
+}
+
+.collapsableSidebar {
+    opacity: 0.7;
+}

@@ -1,7 +1,8 @@
 import { MemoryRouter as Router, Routes, Route } from 'react-router-dom';
-import Login from './views/Login';
+import { Home, Login } from './components/index';
 import PublicRoute from './routes/publicRouting';
 import './App.css';
+import BookView from './components/BookView/BookView';
 
 export default function App() {
   return (
