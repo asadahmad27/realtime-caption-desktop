@@ -156,17 +156,17 @@ const Navbar = () => {
   const handleLogout = () => {};
 
   const menu = (
-    <Menu onClick={handleHamBurgerIconClick}>
-      <Menu.Item key="1" onClick={() => navigate('./')}>
+    <Menu onClick={handleHamBurgerIconClick} className="navbarMenu">
+      <Menu.Item key="1" onClick={() => navigate('/')}>
         {t('Home')}
       </Menu.Item>
-      <Menu.Item key="2" onClick={() => navigate('./annotations')}>
+      <Menu.Item key="2" onClick={() => navigate('/annotations')}>
         {t('Annotations')}
       </Menu.Item>
-      <Menu.Item key="3" onClick={() => navigate('./help')}>
+      <Menu.Item key="3" onClick={() => navigate('/help')}>
         {t('Help')}
       </Menu.Item>
-      <Menu.Item key="4" onClick={() => navigate('./about')}>
+      <Menu.Item key="4" onClick={() => navigate('/about')}>
         {t('About')}
       </Menu.Item>
       <Menu.Item key="5" onClick={handleLogout}>

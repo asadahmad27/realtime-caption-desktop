@@ -1,10 +1,12 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Form } from 'antd';
 import aabBooksLogo from '../../../../assets/iconsCustom/aabBooksLogo.svg';
 import { AABBooksInput, AABBooksButton } from '../commonComponents';
 import './styles.css';
 
 const Login = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -13,7 +15,10 @@ const Login = () => {
     password: string;
   };
 
-  const onFinish = async (values: FormValues) => {};
+  const onFinish = async (values: FormValues) => {
+    console.log('clicked');
+    navigate('/home');
+  };
 
   return (
     <div className="loginContainer">
@@ -110,7 +115,12 @@ const Login = () => {
           <div className="forgotPasswordContainer">
             <p>Forgot Password?</p>
           </div>
-          <AABBooksButton width="100%" height="60px" label={'Login'} />
+          <AABBooksButton
+            width="100%"
+            height="60px"
+            label={'Login'}
+            htmlType="submit"
+          />
         </Form>
       </div>
     </div>

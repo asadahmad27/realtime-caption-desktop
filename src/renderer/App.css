@@ -32,3 +32,52 @@ h6 {
 .ant-form-item {
     margin-bottom: 0px;
 }
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdownToggle {
+    background-color: #fff;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.9rem;
+    padding: 8px 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+
+.dropdownMenu {
+    position: absolute;
+    top: 100%;
+    right: 10px;
+    width: 143px;
+    background-color: #fff;
+    border: none;
+    border-top: none;
+    border-radius: 12px;
+    box-shadow: 0px 2px 8px 0px #00000024;
+    z-index: 1;
+    display: block;
+}
+
+.dropdownMenu button {
+    display: block;
+    width: 100%;
+    padding: 8px 12px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: start;
+    border-radius: 12px;
+    transition: background-color 0.3s;
+}
+
+.dropdownMenu button:hover {
+    background-color: #f0f0f0;
+    border-radius: 12px !important;
+}

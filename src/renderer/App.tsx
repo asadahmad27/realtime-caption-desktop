@@ -16,6 +16,14 @@ export default function App() {
             </PublicRoute>
           }
         />
+        <Route
+          path="/home"
+          element={
+            <PublicRoute restricted={false}>
+              <Home />
+            </PublicRoute>
+          }
+        />
       </Routes>
     </Router>
   );

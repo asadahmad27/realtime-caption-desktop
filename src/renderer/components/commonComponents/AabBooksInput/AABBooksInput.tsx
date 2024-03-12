@@ -1,6 +1,8 @@
 import React, { forwardRef, useState } from 'react';
 import { Form, Input } from 'antd';
 import PasswordEyeIcon from '../../../../../assets/iconsCustom/passwordEyeIcon.svg';
+import PasswordEyeCloseIcon from '../../../../../assets/Frame (12).svg';
+
 import './AABBooksInput.css';
 
 interface AABBooksInputProps {
@@ -35,7 +37,7 @@ const AABBooksInput = forwardRef<HTMLInputElement, AABBooksInputProps>(
               />
               {!passwordVisible ? (
                 <img
-                  src={PasswordEyeIcon}
+                  src={PasswordEyeCloseIcon}
                   className="passwordToggle"
                   onClick={togglePasswordVisibility}
                 />
