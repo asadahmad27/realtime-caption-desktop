@@ -58,7 +58,12 @@ const Contents = {
     "Help":"Aide",
     "About":"À propos",
     "Logout":"Se déconnecter",
-    "Your Progress":"Votre progression"
+    "Your Progress":"Votre progression",
+    "Sort by:" :"Trier par:",
+    "Recently Opened":"Récemment ouvert",
+    "Favorite":"Préférée",
+    "A-Z":"A à Z",
+    "Z-A":"Z-A"
   }
 };
 
