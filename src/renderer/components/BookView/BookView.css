@@ -1,0 +1,68 @@
+.bookContainer {
+    margin: 30px;
+    background: #fff;
+    border-radius: 12px;
+    overflow: auto;
+}
+
+.bookReadBack {
+    margin: 30px 0 0 30px;
+}
+
+.previousPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+}
+
+.nextPage button,
+.previousPage button {
+    border: none;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nextPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 98%;
+}
+
+.nextPage:hover svg,
+.previousPage:hover svg {
+    cursor: pointer;
+    color: blue;
+}
+
+.m-auto {
+    margin: auto;
+}
+
+.footerRow {
+    margin: 0 0 20px 0;
+}
+
+.bookParentSpin {
+    z-index: 0;
+}
+
+.chaptersList {
+    overflow: auto;
+    height: calc(100vh - 110px);
+}
+
+.collapseIcon {
+    position: fixed;
+    top: 60%;
+    z-index: 10;
+}
+
+.collapseIcon button {
+    display: flex;
+    align-items: center;
+    padding: 0;
+}

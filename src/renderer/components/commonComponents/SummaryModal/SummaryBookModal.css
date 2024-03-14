@@ -112,6 +112,10 @@
     justify-content: center;
 }
 
+.readNow:hover {
+    background-color: #99B82D !important;
+}
+
 .ant-modal .ant-modal-close {
     color: white !important;
 }

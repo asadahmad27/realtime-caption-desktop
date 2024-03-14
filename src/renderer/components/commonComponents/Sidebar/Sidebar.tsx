@@ -105,7 +105,7 @@ const Sidebar: React.FC<sidebarProps> = ({
                   }`,
               ],
         );
-
+      console.log('all books menu', allBooksMenuProps, currentBookAndChapter);
       setOpenKeys([...currentBookAndChapter.book.split('=>')]);
     }
   }, [allBooksMenuProps, currentBookAndChapter]);
@@ -151,11 +151,6 @@ const Sidebar: React.FC<sidebarProps> = ({
           setAllBooksChapters && setAllBooksChapters(allChaptersData);
         }
       } catch (error) {
-        console.error(
-          'Error fetching chapters for book:',
-          book.bookLink,
-          error,
-        );
         // Handle error accordingly, e.g., set default chapters or retry
       }
     }
@@ -170,7 +165,7 @@ const Sidebar: React.FC<sidebarProps> = ({
     return {
       key: book.bookLink || index.toString(),
       icon: React.createElement(BookLogo),
-      label: <CustomTooltip title={'No Name'} />,
+      label: <CustomTooltip title={book.bookName || 'No Name'} />,
       children: chapters ? generateMenuItems(chapters, book) : undefined,
     };
   };
@@ -189,13 +184,13 @@ const Sidebar: React.FC<sidebarProps> = ({
         return {
           key:
             chapter.href + '___' + book.bookName + '_children_' + book.bookLink,
-          label: <CustomTooltip title="dfff" />,
+          label: <CustomTooltip title={chapter.label} />,
           children: subMenuItems,
         };
       } else {
         return {
           key: chapter.href + '___' + book.bookName,
-          label: <CustomTooltip title="dsdsd" />,
+          label: <CustomTooltip title={chapter.label} />,
         };
       }
     });

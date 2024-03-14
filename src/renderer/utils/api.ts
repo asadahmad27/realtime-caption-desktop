@@ -20,6 +20,7 @@ export const getEnvVariablesValue = () => envVariablesPromise;
 export const updateBookReadCount = async (bookId: string) => {
   try {
     const baseUrl = await getEnvVariablesValue(); // Wait for the promise to resolve
+    console.log("baseurl from api ================333333333333",baseUrl)
     const response = await axios.post(`${baseUrl}/api/users`, { book: bookId });
     return response;
   } catch (error) {
@@ -31,6 +32,8 @@ export const updateBookReadCount = async (bookId: string) => {
 export const getBookReadCount = async (bookId: string) => {
   try {
     const baseUrl = await getEnvVariablesValue(); // Wait for the promise to resolve
+    console.log("baseurl from api ================333333333333",baseUrl)
+
     const response = await axios.get(`${baseUrl}/api/users?bookId=${bookId}`);
     return response.data;
   } catch (error) {

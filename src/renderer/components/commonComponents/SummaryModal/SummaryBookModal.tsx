@@ -52,7 +52,6 @@ const SummaryBookModal: React.FC<SummaryBookModalProps> = ({
     setCurrentBookReadCount(userCounts?.data?.Total_users ?? 0);
   };
   const bookReadNavigation = () => {
-    console.log('helo');
     let oldBookCounts: bookReadCounts =
       JSON.parse(localStorage.getItem('bookReadCounts') ?? '{}') ?? {};
     if (!oldBookCounts[bookData._id as string]) {
