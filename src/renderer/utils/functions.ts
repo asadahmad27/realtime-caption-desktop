@@ -12,6 +12,7 @@ export const makeLocationsForProgress = async (book:any) => {
     
     if(compilation){
       const { data: allCompilationResponse } = useGetCompilationsBookQuery("English");
+      console.log("allcompliationres",allCompilationResponse)
       return allCompilationResponse
     }else{
       const { data: allBooksResponse } = useGetAllBooksDataQuery("English");
