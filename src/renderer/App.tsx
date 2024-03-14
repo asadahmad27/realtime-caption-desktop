@@ -24,6 +24,14 @@ export default function App() {
             </PublicRoute>
           }
         />
+        <Route
+          path="/book/:id"
+          element={
+            <PublicRoute restricted={false}>
+              <BookView />
+            </PublicRoute>
+          }
+        />
       </Routes>
     </Router>
   );

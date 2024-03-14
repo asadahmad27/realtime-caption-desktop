@@ -1,0 +1,143 @@
+.bookPreview {
+    background: #2e62ad !important;
+}
+
+.previewCloseIcon {
+    font-size: 20px;
+    color: white;
+}
+
+.closeIconContainer {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+}
+
+.closeIconContainer svg {
+    cursor: pointer;
+}
+
+.closeIconContainer svg:hover {
+    opacity: 0.8;
+}
+
+.imageContainer {
+    height: 258px;
+    background: white;
+    width: 50%;
+    margin: 90px auto 20px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.imageContainer img,
+.bookTitle {
+    color: #fff;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.author {
+    color: #aecfff;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.meta {
+    margin-top: 20px;
+}
+
+.info {
+    color: #aecfff;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.info .ant-row {
+    display: flex;
+    justify-content: center;
+}
+
+.infoColumn:first-child {
+    border-right: 1px solid #aecfff;
+}
+
+.infoColumn {
+    margin-top: 20px;
+}
+
+.lastColumn {
+    border-right: none;
+}
+
+.buyNow {
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+    align-items: center;
+    border: none;
+}
+
+.buyNow:hover {
+    color: black !important;
+}
+
+.PreviewDescription .desc {
+    color: #fff;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+.previewButtonContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.readNow {
+    background-color: #99B82D;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ant-modal .ant-modal-close {
+    color: white !important;
+}
+
+.readNow span {
+    margin-right: 10px;
+}
+
+html body {
+    overflow-y: auto !important;
+}
+
+.showInstruction {
+    text-decoration: underline;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.bookSmallInfo {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.ant-modal .ant-modal-content {
+    background: #2e62ad;
+    width: 457px;
+
+}

@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
 import SearchedBooksSlice  from './search/SearchBooksSlice'
 import { setupListeners } from '@reduxjs/toolkit/query'
-import { booksDataApi } from './booksData/BooksData'
+import { booksDataApi}  from './booksData/BooksData'
 export const store = configureStore({
     reducer: {
         booksData: SearchedBooksSlice,
