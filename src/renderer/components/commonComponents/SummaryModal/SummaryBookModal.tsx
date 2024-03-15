@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Modal, Button, Image, Row, Col } from 'antd';
 import { useNavigate } from 'react-router-dom';
+import { CloseCircleOutlined } from '@ant-design/icons';
 import { BookOpen, Cart } from '../../../../../assets/iconsCustom/Svgs';
 import { BookInterface, bookReadCounts } from '../../../utils/interfaces';
 import { getBookReadCount, updateBookReadCount } from '../../../utils/api';
@@ -77,6 +78,8 @@ const SummaryBookModal: React.FC<SummaryBookModalProps> = ({
       visible={showModal}
       onCancel={() => setShowSummaryModal(false)}
       footer={null}
+      className="customSummaryModal"
+      closeIcon={<CloseCircleOutlined style={{ fontSize: '30px' }} />}
     >
       <div className="previewContainer">
         <div className="imageContainer">
@@ -88,9 +91,9 @@ const SummaryBookModal: React.FC<SummaryBookModalProps> = ({
         </div>
         <div className="meta">
           <p className="bookTitle">{bookData.bookName}</p>
-          <p className="author">
+          {/* <p className="author">
             {t('By')} {bookData.authorName}
-          </p>
+          </p> */}
         </div>
         <div className="PreviewDescription">
           <p className="desc">

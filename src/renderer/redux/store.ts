@@ -17,3 +17,4 @@ export type RootState = ReturnType<typeof store.getState>
 // Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
 export type AppDispatch = typeof store.dispatch
 setupListeners(store.dispatch)
+export const PUBLIC_BASE_URL: string | undefined = 'https://api-dev.lucistrust.org';
