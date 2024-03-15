@@ -14,15 +14,15 @@ import { autoUpdater } from 'electron-updater';
 import log from 'electron-log';
 import MenuBuilder from './menu';
 import { resolveHtmlPath } from './util';
-import dotenv from 'dotenv';
-dotenv.config();
+// import dotenv from 'dotenv';
+// dotenv.config();
 
-ipcMain.on('get-env-variables', (event) => {
-  event.returnValue = {
-    REACT_APP_API_URL: process.env.REACT_APP_API_URL ,
+// ipcMain.on('get-env-variables', (event) => {
+//   event.returnValue = {
+//     REACT_APP_API_URL: process.env.REACT_APP_API_URL ,
  
-  };
-});
+//   };
+// });
 
 class AppUpdater {
   constructor() {
@@ -104,9 +104,9 @@ const createWindow = async () => {
     }
   });
 
-  mainWindow.webContents.on('did-finish-load', () => {
-    mainWindow?.webContents.send('env-variables', process.env.REACT_APP_API_URL );
-  });
+  // mainWindow.webContents.on('did-finish-load', () => {
+  //   mainWindow?.webContents.send('env-variables', process.env.REACT_APP_API_URL );
+  // });
 
   mainWindow.on('closed', () => {
     mainWindow = null;

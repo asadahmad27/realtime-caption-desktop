@@ -15,3 +15,9 @@
 .button:hover {
     background-color: var(--primaryButton) !important;
 }
+
+.button span {
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 1.25rem;
+}
