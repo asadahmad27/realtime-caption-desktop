@@ -20,6 +20,8 @@
 .previousPage button {
     border: none;
     outline: none;
+    background: transparent;
+    box-shadow: none;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -33,6 +33,10 @@ h6 {
     margin-bottom: 0px;
 }
 
+.ant-btn span {
+    font-family: "Inter", sans-serif;
+}
+
 .dropdown {
     position: relative;
     display: inline-block;
@@ -125,4 +129,9 @@ h6 {
 .pageNumberInfo .ant-tooltip-inner {
     background-color: white;
     color: black;
+}
+
+.ant-modal .ant-modal-close {
+    top: 30px;
+    inset-inline-end: 30px
 }
