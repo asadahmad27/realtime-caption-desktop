@@ -8,16 +8,16 @@ export default function App() {
   return (
     <Router>
       <Routes>
-        {/* <Route
+        <Route
           path="/"
           element={
             <PublicRoute restricted={false}>
               <Login />
             </PublicRoute>
           }
-        /> */}
+        />
         <Route
-          path="/"
+          path="/home"
           element={
             <PublicRoute restricted={false}>
               <Home />
