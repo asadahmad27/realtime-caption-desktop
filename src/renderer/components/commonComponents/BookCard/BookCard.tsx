@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import { Card } from 'antd';
 import { useTranslation } from 'react-i18next';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { getBookReadCount, updateBookReadCount } from '../../../utils/api';
 import defaultCover from '../../../../../assets/BookCardDefaultPic.svg';
-import { BookInterface } from '../../../utils/interfaces';
+import { BookInterface, bookReadCounts } from '../../../utils/interfaces';
 import { StarOutlined, MoreOutlined } from '@ant-design/icons';
+import { sidebarChange } from '../../../redux/search/SearchBooksSlice';
 import useComponentVisible from '../../../utils/useComponentVisible';
 import SummaryBookModal from '../../commonComponents/SummaryModal/SummaryBookModal';
 import './BookCard.css';
@@ -16,7 +20,10 @@ interface BookCardProps {
 
 const BookCard: React.FC<BookCardProps> = ({ bookData }) => {
   const { t } = useTranslation();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [menuVisible, setMenuVisible] = useState(false);
+  const [currentBookReadCount, setCurrentBookReadCount] = useState<number>(0);
   const [showSummaryModal, setShowSummaryModal] = useState(false);
   const [compilationBookClicked, setCompilationBookClicked] =
     useState<boolean>(false);
@@ -33,13 +40,31 @@ const BookCard: React.FC<BookCardProps> = ({ bookData }) => {
     setIsComponentVisible(false);
     if (action === 'Summary') {
       setShowSummaryModal(true);
+    } else {
+      bookReadNavigation();
     }
   };
 
-  const closeModal = () => {
-    setShowSummaryModal(false);
+  const bookReadNavigation = () => {
+    let oldBookCounts: bookReadCounts =
+      JSON.parse(localStorage.getItem('bookReadCounts') ?? '{}') ?? {};
+    if (!oldBookCounts[bookData._id as string]) {
+      oldBookCounts[bookData._id as string] = true;
+      localStorage.setItem('bookReadCounts', JSON.stringify(oldBookCounts));
+      bookData._id && updateBookReadCount(bookData._id);
+      setCurrentBookReadCount(currentBookReadCount + 1);
+    }
+    if (compilationBookClicked) {
+      console.log('cliekded compilation book', compilationBookClicked);
+      navigate(
+        `/book/${bookData._id}?compilation=${compilationBookClicked}&bookId=${bookData._id}`,
+      );
+    } else {
+      console.log('not ', compilationBookClicked);
+      navigate(`/book/${bookData._id}?compilation=${compilationBookClicked}`);
+    }
+    dispatch(sidebarChange());
   };
-
   return (
     <>
       <Card

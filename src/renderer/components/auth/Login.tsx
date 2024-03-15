@@ -16,7 +16,6 @@ const Login = () => {
   };
 
   const onFinish = async (values: FormValues) => {
-    console.log('clicked');
     navigate('/home');
   };
 

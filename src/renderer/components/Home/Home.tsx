@@ -100,24 +100,18 @@ const Home = () => {
           </div>
         </div>
         <div className="booksContainer">
-          {allBooksData ? (
+          {allBooksData &&
             allBooksData.data?.map((book: BookInterface) => (
               <BookCard key={book._id} bookData={book} />
-            ))
-          ) : (
-            <p>No books available</p>
-          )}
+            ))}
         </div>
 
         <h3 className="compilationsHeading">{t('Compilations')}</h3>
         <div className="booksContainer">
-          {allCompilationsData ? (
+          {allCompilationsData &&
             allCompilationsData.data?.map((book: BookInterface) => (
               <BookCard key={book._id} bookData={book} />
-            ))
-          ) : (
-            <p>No compilations books are available</p>
-          )}
+            ))}
         </div>
       </div>
     </>

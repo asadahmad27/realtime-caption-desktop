@@ -81,3 +81,48 @@ h6 {
     background-color: #f0f0f0;
     border-radius: 12px !important;
 }
+
+.sectionCollapse {
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    cursor: pointer;
+}
+
+.homeNavigation p {
+    margin: 0;
+    padding: 0;
+    color: #99b82d;
+    line-height: normal;
+}
+
+.homeNavigation {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    position: absolute;
+    bottom: 10%;
+    gap: 5px;
+}
+
+.logoContainer .homeNavigation:hover p {
+    text-decoration: underline;
+}
+
+.logoContainer {
+    cursor: pointer;
+    position: relative;
+    min-height: 110px;
+}
+
+.pageNumberInfo .ant-tooltip-arrow::before {
+    background: white;
+}
+
+.pageNumberInfo .ant-tooltip-inner {
+    background-color: white;
+    color: black;
+}

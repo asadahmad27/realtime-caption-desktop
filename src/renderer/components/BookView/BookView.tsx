@@ -46,7 +46,7 @@ const BookView: React.FC = () => {
   useEffect(() => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth', // For smooth scrolling, use 'auto' for instant scrolling
+      behavior: 'smooth',
     });
     if (allBooksData && allBooksData?.data?.length) {
       getAllBooks();
@@ -160,7 +160,7 @@ const BookView: React.FC = () => {
             onMouseEnter={() => setCollapseIcon(true)}
             onClick={() => {
               setCollapsableSidebar(!collapsableSidebar);
-              setKey(Math.floor(Math.random() * 100) + 1);
+              // setKey(Math.floor(Math.random() * 100) + 1);
               setCollapseIcon(false);
             }}
             onMouseLeave={() => setCollapseIcon(false)}
@@ -173,8 +173,7 @@ const BookView: React.FC = () => {
                 title={t('Expand Sidebar')}
               >
                 <div className="sectionCollapse">
-                  {' '}
-                  <GrNext />{' '}
+                  <GrNext />
                 </div>
               </Tooltip>
             ) : (
