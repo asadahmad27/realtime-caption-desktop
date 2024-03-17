@@ -1,24 +1,45 @@
 .BookFooter {
     border-radius: 12px;
     background: white;
-    padding: 15px;
+    padding: 15px 100px;
 }
 
-.BookFooter .ant-row .ant-col:first-child,
-.BookFooter .ant-row .ant-col:last-child {
-    flex: 0 0 40%;
-    max-width: 40%;
+.BookFooter.ant-col:first-child,
+.BookFooter .ant-col:last-child {
+    flex: 0 0 100%;
+    max-width: 100%;
 }
 
-.BookFooter .ant-row .ant-col:nth-child(2) {
-    flex: 0 0 20%;
-    max-width: 20%;
+.BookFooter .ant-col:nth-child(2) {
+    flex: 0 0 100%;
+    max-width: 100%;
 }
 
 .pageNumberHanlder {
     display: flex;
     align-items: center;
 }
+
+.vertical1Divider {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    justify-content: center;
+    border-left: 1px solid #c5c5c5;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.vertical2Divider {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border-left: 1px solid #c5c5c5;
+    justify-content: center;
+    border-right: 1px solid #c5c5c5;
+    padding: 0 10px;
+}
+
 
 .pageNumbers {
     background: #e3f0f5;
@@ -54,12 +75,21 @@
     align-items: center;
 }
 
-.zoomValue {
-    background: #e3f0f5;
-    padding: 10px;
-    border-radius: 4px;
-    width: 55px;
-    text-align: center;
+
+.booksFooterContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.yourProgressHeading {
+    font-family: "Inter", sans-serif;
+    font-size: 0.6rem;
+    font-weight: 400;
+    color: #6A707C;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .pageNumberHandler {

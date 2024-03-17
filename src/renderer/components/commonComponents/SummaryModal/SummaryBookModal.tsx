@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Modal, Button, Image, Row, Col } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import { CloseCircleOutlined } from '@ant-design/icons';
-import { BookOpen, Cart } from '../../../../../assets/iconsCustom/Svgs';
+import { BookOpen } from '../../../../../assets/iconsCustom/Svgs';
 import { BookInterface, bookReadCounts } from '../../../utils/interfaces';
 import { getBookReadCount, updateBookReadCount } from '../../../utils/api';
 import defaultCover from '../../../../../assets/BookCardDefaultPic.svg';
