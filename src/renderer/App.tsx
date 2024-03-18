@@ -1,8 +1,9 @@
 import { MemoryRouter as Router, Routes, Route } from 'react-router-dom';
 import { Home, Login } from './components/index';
 import PublicRoute from './routes/publicRouting';
-import './App.css';
 import BookView from './components/BookView/BookView';
+import SearchPage from './components/SearchPage/SearchPage';
+import './App.css';
 
 export default function App() {
   return (
@@ -29,6 +30,14 @@ export default function App() {
           element={
             <PublicRoute restricted={false}>
               <BookView />
+            </PublicRoute>
+          }
+        />
+        <Route
+          path="/search/:searchText"
+          element={
+            <PublicRoute restricted={false}>
+              <SearchPage />
             </PublicRoute>
           }
         />
