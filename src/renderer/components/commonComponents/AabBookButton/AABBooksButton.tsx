@@ -10,6 +10,7 @@ export interface AABBooksButtonProps {
   width?: string;
   height?: string;
   fontSize?: string;
+  backgroundColor?: string;
 }
 
 const AABBooksButton: React.FC<AABBooksButtonProps> = ({
@@ -19,6 +20,7 @@ const AABBooksButton: React.FC<AABBooksButtonProps> = ({
   borderRadius,
   width,
   height,
+  backgroundColor,
   fontSize,
   ...restProps
 }) => {
@@ -30,6 +32,7 @@ const AABBooksButton: React.FC<AABBooksButtonProps> = ({
         borderRadius: borderRadius,
         width: width,
         height: height,
+        background: backgroundColor,
         fontSize: fontSize,
       }}
       {...restProps}

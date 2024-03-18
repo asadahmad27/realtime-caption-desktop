@@ -7,7 +7,7 @@
     padding: 0 3%;
     display: flex;
     justify-content: space-between;
-    min-height: 110px;
+    min-height: 108px;
 }
 
 .search-bar {
@@ -131,7 +131,7 @@
 }
 
 .languagesOption button {
-    min-width: 114px;
+    min-width: 116px;
 }
 
 .languagesOption {
@@ -177,6 +177,8 @@
 
 .bookSearchButton {
     height: 45px;
+    font-size: 1rem;
+    color: white;
 }
 
 .languagesOption button {
@@ -197,6 +199,13 @@
 /* .customWidth {
     width: 60% !important;
 } */
+
+.navbarContainer {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 5px;
+    justify-content: space-between;
+}
 
 .homeNavigation p {
     margin: 0;

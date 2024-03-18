@@ -214,7 +214,7 @@ const Navbar = () => {
           </div>
           {compilationActive !== 'true' && (
             <div
-              className={`booksContainer ${
+              className={`navbarContainer ${
                 inputFocused ? 'showBooksButton' : 'hideBooksButton'
               }`}
             >
@@ -253,9 +253,12 @@ const Navbar = () => {
               label={t('Search')}
               name="search"
               height="50px"
+              width="272px"
               borderRadius="6px"
+              fontSize="1rem"
+              backgroundColor="#99B82D"
               onClick={handleSearchButton}
-              //   className="bookSearchButton"
+              className="bookSearchButton"
             />
           )}
           <div className="languagesOption">
