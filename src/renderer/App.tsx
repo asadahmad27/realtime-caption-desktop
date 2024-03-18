@@ -33,14 +33,14 @@ export default function App() {
             </PublicRoute>
           }
         />
-        <Route
+        {/* <Route
           path="/search/:searchText"
           element={
             <PublicRoute restricted={false}>
               <SearchPage />
             </PublicRoute>
           }
-        />
+        /> */}
       </Routes>
     </Router>
   );
