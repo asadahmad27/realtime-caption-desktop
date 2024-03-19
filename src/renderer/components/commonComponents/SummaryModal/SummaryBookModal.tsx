@@ -96,7 +96,7 @@ const SummaryBookModal: React.FC<SummaryBookModalProps> = ({
           </p> */}
         </div>
         <div className="PreviewDescription">
-          <p className="desc">
+          <p className="desc" style={{ maxHeight: '200px', overflowY: 'auto' }}>
             {bookData?.bookDescription &&
             bookData?.bookDescription?.length > 300 ? (
               <>
@@ -127,7 +127,6 @@ const SummaryBookModal: React.FC<SummaryBookModalProps> = ({
               bookData.bookDescription
             )}
           </p>
-          {/* <p className="desc">{bookData.bookLanguage}</p> */}
         </div>
         <div className="info">
           <Row>

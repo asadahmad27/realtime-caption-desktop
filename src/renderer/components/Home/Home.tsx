@@ -1,14 +1,14 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Menu } from 'antd';
 import { DownOutlined, UpOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
-import { Navbar } from '../commonComponents';
 import { useDispatch } from 'react-redux';
 import { BookInterface } from '../../utils/interfaces';
 import BookCard from '../commonComponents/BookCard/BookCard';
 import { sidebarChange } from '../../redux/search/SearchBooksSlice';
 import { getAllBookData } from '../../utils/functions';
 import useComponentVisible from '../../utils/useComponentVisible';
+import { PrimaryLayout } from '../functional';
 import './Home.css';
 
 const { Item } = Menu;
@@ -33,10 +33,6 @@ const Home = () => {
   const toggleDropdown = () => {
     setIsComponentVisible(!isComponentVisible);
   };
-
-  const books = Array.from({ length: 12 }, (_, index) => ({
-    id: index,
-  }));
 
   const menu = (
     <Menu onClick={handleMenuClick} className="sortDropdown2">
@@ -69,8 +65,7 @@ const Home = () => {
   const allBooksData = getAllBookData(false);
   const allCompilationsData = getAllBookData(true);
   return (
-    <>
-      <Navbar />
+    <PrimaryLayout>
       <div className={`dashboardContent`}>
         <div className="booksHeadingContainer">
           <h3 className="booksHeading">{t('Books')}</h3>
@@ -114,7 +109,7 @@ const Home = () => {
             ))}
         </div>
       </div>
-    </>
+    </PrimaryLayout>
   );
 };
 

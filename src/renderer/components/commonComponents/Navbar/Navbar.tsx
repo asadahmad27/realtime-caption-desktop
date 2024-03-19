@@ -7,21 +7,23 @@ import { AiOutlineDown } from 'react-icons/ai';
 import { RootState } from '../../../redux/store';
 import { useTranslation } from 'react-i18next';
 import { IoSearchOutline } from 'react-icons/io5';
+import {
+  sidebarChange,
+  storeSearchedBooks,
+} from '../../../redux/search/SearchBooksSlice';
 import { IoChevronDownOutline } from 'react-icons/io5';
 import type { MenuProps } from 'antd';
 import {
   EnglishLanguage,
   FrenchLanguage,
-  HelpQuestionMark,
   HamBurgerIcon,
-  HomeIcon,
   Logo,
 } from '../../../../../assets/iconsCustom/Svgs';
 import AABBooksButton from '../AabBookButton/AABBooksButton';
 import BookList from '../../BooksList/BooksList';
+import { BookInterface } from '../../../utils/interfaces';
+import { getAllBookData } from '../../../utils/functions';
 import './Navbar.css';
-import BookCard from '../BookCard/BookCard';
-import Home from '../../Home/Home';
 
 const { Header } = Layout;
 const items: MenuProps['items'] = [
@@ -63,19 +65,41 @@ const Navbar = () => {
   const [searchText, setSearchText] = useState<string>(
     searchingText ? searchingText : '',
   );
+  const allCompilationsData = getAllBookData(true);
+  const sidebarCondition: boolean = useSelector(
+    (state: RootState) => state.booksData.sidebarOpen,
+  );
+  const bookId = searchParams.get('bookId');
+  const dispatch = useDispatch();
+
   const searchTextInBooks = (
     searchValue: string,
     compilation: boolean,
   ): void => {
     const encodedSearchValue = encodeURIComponent(searchValue);
+
     if (compilation) {
+      const currentBookData = allCompilationsData?.data?.filter(
+        (book: BookInterface) => book._id === bookId,
+      );
+      dispatch(storeSearchedBooks(currentBookData));
+      navigate(
+        `/search/${encodedSearchValue}?compilation=true&bookId=${bookId}`,
+      );
+    } else {
+      dispatch(storeSearchedBooks(selectedBooks));
+      navigate(`/search/${encodedSearchValue}?compilation=false`);
     }
     setDropDownClicked(false);
+
+    sidebarCondition && dispatch(sidebarChange());
   };
+
   const handleDropdownVisibleChange = (visible: boolean) => {
     setDropdownVisible(visible);
   };
   const handleSearchButton = (): void => {
+    console.log('clicked handlesearchbutton');
     if (searchText.trim().length > 2) {
       if (compilationActive === 'true') {
         searchTextInBooks(searchText, true);
@@ -214,7 +238,7 @@ const Navbar = () => {
           </div>
           {compilationActive !== 'true' && (
             <div
-              className={`booksContainer ${
+              className={`navbarContainer ${
                 inputFocused ? 'showBooksButton' : 'hideBooksButton'
               }`}
             >
@@ -253,9 +277,12 @@ const Navbar = () => {
               label={t('Search')}
               name="search"
               height="50px"
+              width="272px"
               borderRadius="6px"
+              fontSize="1rem"
+              backgroundColor="#99B82D"
               onClick={handleSearchButton}
-              //   className="bookSearchButton"
+              className="bookSearchButton"
             />
           )}
           <div className="languagesOption">

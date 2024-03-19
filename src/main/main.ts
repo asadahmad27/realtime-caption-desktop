@@ -138,6 +138,16 @@ app.on('window-all-closed', () => {
   }
 });
 
+
+ipcMain.on('navigate-back', (event) => {
+  const window = BrowserWindow.getFocusedWindow();
+  console.log("hello i am in mainjs")
+  if (window) {
+    window.webContents.goBack();
+  }
+});
+
+
 app
   .whenReady()
   .then(() => {

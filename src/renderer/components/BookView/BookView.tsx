@@ -82,7 +82,10 @@ const BookView: React.FC = () => {
   };
 
   const browserBack = () => {
-    window.history.back();
+    console.log('before back');
+    history.back();
+
+    console.log('after back');
   };
 
   const handleZoom = (zoomValue: number) => {

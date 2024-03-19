@@ -1,0 +1,70 @@
+.matchedSearchText {
+    stroke: transparent;
+}
+
+.matchedSearchText line {
+    display: none;
+}
+
+.matchedSearchText rect {
+    fill: yellow;
+    opacity: 0.5;
+}
+
+#book-container {
+    height: calc(100vh - 143px);
+    padding: 10px 0;
+}
+
+.buttonsNav p {
+    font-family: "epubfontsrf", serif;
+    font-size: 0.9rem;
+    text-align: center;
+    margin: auto 0;
+}
+
+.buttonsNav button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonsNav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.bookRenderParent {
+    padding: 20px;
+}
+
+.searchZoomButtons {
+    display: flex;
+}
+
+.searchPageNumbers {
+    display: flex;
+}
+
+@media screen and (max-width: 1200px) {
+    .buttonsNav {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .buttonsContainer {
+        border-right: none;
+        border-left: none;
+    }
+
+    .searchPageNumbers {
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    .searchedList {
+        height: calc(100vh - 35px);
+    }
+}

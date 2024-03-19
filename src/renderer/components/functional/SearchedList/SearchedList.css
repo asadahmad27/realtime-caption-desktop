@@ -1,0 +1,246 @@
+.searchedList {
+    background-color: white;
+    padding: 0px 35px 30px 35px;
+    border-radius: 4px;
+    height: calc(100vh - 92px);
+    overflow: auto;
+    margin-top: 31px;
+    position: relative;
+    width: 100%;
+}
+
+.bookTag:hover {
+    border: 1px solid green;
+}
+
+.bookTag {
+    display: inline-flex;
+    gap: 6px;
+    padding: 6px;
+    align-items: center;
+    margin: 8px 8px 0 0;
+    cursor: pointer;
+}
+
+.bookCloseIcon {
+    color: #afc85c;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.tags-container {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.searchTerm {
+    color: #494949;
+    font-family: Inter;
+    font-size: 20px;
+    margin: auto 0;
+}
+
+.searchTermText {
+    color: #494949;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.resultsNumber {
+    color: #393f47;
+    text-align: right;
+    font-size: 12px;
+    margin: auto 0;
+}
+
+.searchTermContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0 2px 0;
+}
+
+.bookName {
+    color: #262626;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.bookInfo {
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    background: #fff;
+    box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.12);
+    height: 50px;
+    width: 85%;
+    justify-content: center;
+    gap: 8px;
+}
+
+.normalSvg svg {
+    fill: #8b8e93;
+}
+
+.bookNameInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0 20px 10px;
+}
+
+.resultsList .section {
+    color: #141414;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 0px 0 0 10px;
+}
+
+.result {
+    gap: 6px;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    padding: 10px 0;
+}
+
+.resultExcerpt {
+    margin: auto 0;
+}
+
+.textFound {
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.previousButton:hover {
+    color: #686c5a !important;
+}
+
+.previousButton {
+    background: #d7e1c0;
+    border-radius: 12px;
+    padding: 20px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    color: #686c5a;
+    width: 80px;
+}
+
+.nextButton:hover {
+    color: #fff !important;
+}
+
+.nextButton {
+    background: #afc85c;
+    border-radius: 12px;
+    padding: 20px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    color: #fff;
+    width: 80px;
+}
+
+.buttonsNavContainer {
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.selectedBook {
+    background: #e3f0f5;
+}
+
+.singleResult {
+    display: flex;
+    cursor: pointer;
+    padding: 0 10px;
+    align-items: center;
+    gap: 8px;
+}
+
+.singleResult:hover {
+    background-color: #e3f0f5;
+}
+
+.chapterNumber {
+    display: flex;
+    padding: 10px;
+
+    line-height: 20px;
+    color: #393f47;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+.selectedResult {
+    background-color: #e3f0f5;
+}
+
+.navResultBar button,
+.bookNameInfo button {
+    border: none;
+    background: transparent;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.navResultBar {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 18px;
+}
+
+.navResultButtonNext,
+.navResultButtonPrev {
+    color: #afc85c;
+}
+
+.disabledNav {
+    cursor: not-allowed !important;
+    color: rgb(63, 54, 54);
+}
+
+.bookNavCrossIcon {
+    position: absolute;
+    right: -5%;
+    top: 10%;
+    cursor: pointer;
+}
+
+.ant-tooltip-content .ant-tooltip-inner {
+    color: #000;
+}
+
+.stickyInfo {
+    position: sticky;
+    top: 0px;
+    padding: 25px 0 5px 0;
+    background: white;
+}
+
+.noResultsFound {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.centeredText {
+    text-align: center;
+}
