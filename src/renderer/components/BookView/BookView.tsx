@@ -2,6 +2,7 @@ import { Col, Row, Button, Spin, Tooltip } from 'antd';
 import { BookFooter, Sidebar } from '../commonComponents';
 import { BookContainer, PrimaryLayout } from '../../components/functional';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { BookInterface, bookInfo } from '../../utils/interfaces';
 import { LeftArrow } from '../../../../assets/iconsCustom/Svgs';
 import { useParams, useSearchParams } from 'react-router-dom';
@@ -12,6 +13,7 @@ import { useTranslation } from 'react-i18next';
 import './BookView.css';
 
 const BookView: React.FC = () => {
+  const navigate = useNavigate();
   const [collapseIcon, setCollapseIcon] = useState<boolean>(false);
   const [collapsableSidebar, setCollapsableSidebar] = useState<boolean>(false);
   const [AllBooks, setAllBooks] = useState<BookInterface[]>([]);
@@ -76,15 +78,14 @@ const BookView: React.FC = () => {
     }
   }
   const handleWindowResize = () => {
-    setKey(Math.floor(Math.random() * 100) + 1);
+    // setKey(Math.floor(Math.random() * 100) + 1);
 
     setParentRendition(null);
   };
 
   const browserBack = () => {
     console.log('before back');
-    history.back();
-
+    navigate('/home');
     console.log('after back');
   };
 
