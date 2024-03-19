@@ -25,12 +25,6 @@ interface bookContainerProps {
   setCurrentCfi: React.Dispatch<React.SetStateAction<string>>;
   setProceedNext: React.Dispatch<React.SetStateAction<boolean>>;
 }
-// type CurrentPage = number | { startPage: number; endPage: number };
-
-// interface totalPages {
-//   startPages: number;
-//   endPages: number;
-// }
 
 const BookContainer: React.FC<bookContainerProps> = ({
   currentBookAndChapter,
@@ -299,7 +293,6 @@ const BookContainer: React.FC<bookContainerProps> = ({
           {singlePageMode ? (
             <>
               <p>
-                {' '}
                 Page
                 {` ${currentPage}`} {t('of')} {`${totalPages} `}
                 {t('in this Section')}
@@ -317,17 +310,15 @@ const BookContainer: React.FC<bookContainerProps> = ({
           ) : (
             <>
               <p>
-                {' '}
                 Page
-                {` ${currentPage?.startPage}`} {t('of')}{' '}
+                {` ${currentPage?.startPage}`} {t('of')}
                 {`${totalPages?.startPages} `}
                 {t('in this Section')}
               </p>
               <span className="pageNumbersFooter noMarginBottom ">
                 <p>
-                  {' '}
                   Page
-                  {` ${currentPage?.endPage}`} {t('of')}{' '}
+                  {` ${currentPage?.endPage}`} {t('of')}
                   {`${totalPages?.endPages} `}
                   {sameSectionOpened
                     ? t('in this Section')
