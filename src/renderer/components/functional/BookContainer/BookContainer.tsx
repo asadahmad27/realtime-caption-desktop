@@ -57,16 +57,19 @@ const BookContainer: React.FC<bookContainerProps> = ({
   const allBooksData: { data: BookInterface[] } = getAllBookData(
     compilationActive === 'true' ? true : false,
   );
+
   useEffect(() => {
     if (cfiToNavigate) {
       setNavigatedCfi(cfiToNavigate);
     }
   }, [cfiToNavigate]);
+
   useEffect(() => {
     if (allBooksData?.data?.length && totalChapters?.length) {
       renderBook(allBooksData?.data);
     }
   }, [allBooksData, currentBookAndChapter, totalChapters]);
+
   const removeFirstChildIfMultiple = () => {
     const container = bookContainerRef.current;
     if (container && container.children.length > 1) {

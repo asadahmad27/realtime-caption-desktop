@@ -54,6 +54,9 @@ h6 {
     align-items: center;
 }
 
+#webpack-dev-server-client-overlay {
+    display: none !important;
+}
 
 .dropdownMenu {
     position: absolute;

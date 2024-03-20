@@ -2,11 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ePub, { NavItem } from 'epubjs';
 import type { MenuProps } from 'antd';
 import { Layout, Menu, Skeleton } from 'antd';
-import {
-  Logo,
-  BookLogo,
-  HomeIcon,
-} from '../../../../../assets/iconsCustom/Svgs';
+import { Logo, BookLogo } from '../../../../../assets/iconsCustom/Svgs';
 import {
   BookInterface,
   bookInfo,
@@ -130,6 +126,7 @@ const Sidebar: React.FC<sidebarProps> = ({
 
       try {
         const toc = await singleBook.loaded.navigation;
+
         const modifiedToc = toc.toc.slice();
         modifiedToc.splice(1, 2); // Remove second and third items
 
@@ -254,6 +251,7 @@ const Sidebar: React.FC<sidebarProps> = ({
     setProceedNext(false);
     handleChapterNavigation(item.keyPath);
   };
+
   return (
     <Layout hasSider className="primarySidebar">
       <Sider

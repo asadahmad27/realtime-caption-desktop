@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Col, Row, Spin, Tooltip } from 'antd';
+import { Col, Row, Tooltip } from 'antd';
 import { useParams, useSearchParams } from 'react-router-dom';
 import ePub, { NavItem } from 'epubjs';
+import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { BookOptions } from 'epubjs/types/book';
 import { CheckboxValueType } from 'antd/es/checkbox/Group';
@@ -24,6 +25,7 @@ import {
 import './SearchPage.css';
 
 const SearchPage: React.FC = () => {
+  const navigate = useNavigate();
   const [searching, setSearching] = useState<boolean>(false);
   const [cfiToNavigate, setCfiToNavigate] = useState<string>('');
   const [bookIndexWithSearch, setBookIndexWithSearch] = useState<number>(-1);
@@ -94,6 +96,7 @@ const SearchPage: React.FC = () => {
           searchBooks.includes(item.bookLink as CheckboxValueType),
         );
       }
+
       setSearching(true);
       const bookIndexWithSearchResults = await handleMultiBooksSearch(
         searchText || '',
@@ -139,6 +142,7 @@ const SearchPage: React.FC = () => {
       // setOldBookAndChapter(currentBookAndChapter);
     }
   };
+
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -152,16 +156,17 @@ const SearchPage: React.FC = () => {
       window.removeEventListener('resize', handleWindowResize);
     };
   }, [allBooksResponse]);
+
   const handleWindowResize = () => {
     setKey(Math.floor(Math.random() * 100) + 1);
   };
-  // useEffect(() => {
-  //   if (!proceedNext) {
-  //     setTimeout(() => {
-  //       setProceedNext(true);
-  //     }, 1500);
-  //   }
-  // }, [proceedNext]);
+  useEffect(() => {
+    if (!proceedNext) {
+      setTimeout(() => {
+        setProceedNext(true);
+      }, 1500);
+    }
+  }, [proceedNext]);
 
   useEffect(() => {
     renderSearchResults();
@@ -349,7 +354,7 @@ const SearchPage: React.FC = () => {
   };
 
   const browserBack = () => {
-    window.history.back();
+    navigate(-1);
   };
 
   function colsValueForBookSection(
@@ -374,9 +379,9 @@ const SearchPage: React.FC = () => {
     if (searchSectionCollapsed) {
       return 0;
     } else if (sidebarCollapsed && !searchSectionCollapsed) {
-      return 11;
+      return 24;
     } else {
-      return 9;
+      return 24;
     }
   }
 
@@ -405,12 +410,7 @@ const SearchPage: React.FC = () => {
               />
             </div>
           </Col>
-          <Col
-            md={colsValueForBookSection(
-              collapsableSidebar,
-              collapsableSearchSection,
-            )}
-          >
+          <Col md={collapsableSidebar ? 23 : 18}>
             <div
               onMouseEnter={() => setCollapseIcon(true)}
               onClick={() => {
@@ -473,53 +473,6 @@ const SearchPage: React.FC = () => {
               <LeftArrow />
               {t('Back')}
             </div>
-            <Spin spinning={!proceedNext} delay={300}>
-              {searchBooks?.length > 0 || compilationActive === 'true' ? (
-                searchResults?.length ? (
-                  <SearchedBook
-                    cfiToNavigate={cfiToNavigate}
-                    currentBookAndChapter={currentBookAndChapter}
-                    parentRendition={parentRendition}
-                    setParentRendition={setParentRendition}
-                    setSelectedCfi={setSelectedCfi}
-                    setOpenKeys={setOpenKeys}
-                    setSelectedKeys={setSelectedKeys}
-                    proceedNext={proceedNext}
-                    setProceedNext={setProceedNext}
-                    setFirstSearchResult={setFirstSearchResult}
-                    navigateToOnlyCfi={navigateToOnlyCfi}
-                    firstResult={firstSearchResult}
-                    setNavigateToOnlyCfi={setNavigateToOnlyCfi}
-                  />
-                ) : (
-                  <div className="searchedBook">
-                    <div className="NothingFound">
-                      <h2>
-                        {' '}
-                        {searching ? t('Searching...') : t('No Results Found')}
-                      </h2>
-                    </div>
-                  </div>
-                )
-              ) : (
-                <div className="searchedBook">
-                  <div className="NothingFound">
-                    <h2 className="centeredText">
-                      {' '}
-                      {t('Please Search for Something')}
-                    </h2>
-                  </div>
-                </div>
-              )}
-            </Spin>
-          </Col>
-          <Col
-            md={colsValueForSearchSection(
-              collapsableSidebar,
-              collapsableSearchSection,
-            )}
-            style={{ opacity: searchCollapseIcon ? 0.7 : 1 }}
-          >
             <div style={{ display: 'flex', alignItems: 'center' }}>
               <SearchedList
                 searchResults={searchResults}

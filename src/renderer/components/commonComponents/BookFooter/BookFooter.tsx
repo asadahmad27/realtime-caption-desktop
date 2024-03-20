@@ -3,7 +3,7 @@ import {
   CapitalWordLogo,
   FullScreenIcon,
 } from '../../../../../assets/iconsCustom/Svgs';
-import { Button, Col, Progress, Row, Tooltip } from 'antd';
+import { Button, Col, Progress } from 'antd';
 import { NavItem } from 'epubjs';
 import { useTranslation } from 'react-i18next';
 import './BookFooter.css';
@@ -12,7 +12,6 @@ interface BookFooterProps {
   totalChapters: NavItem[];
   currentChapterIndex: string;
   onChapterChange: (chapter: string) => void;
-  handleZoom: (zoomStyle: number) => void;
   progress: number;
   proceedNext: boolean;
   setProceedNext: React.Dispatch<React.SetStateAction<boolean>>;

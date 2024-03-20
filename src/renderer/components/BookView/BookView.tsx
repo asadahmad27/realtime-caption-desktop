@@ -2,6 +2,7 @@ import { Col, Row, Button, Spin, Tooltip } from 'antd';
 import { BookFooter, Sidebar } from '../commonComponents';
 import { BookContainer, PrimaryLayout } from '../../components/functional';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { BookInterface, bookInfo } from '../../utils/interfaces';
 import { LeftArrow } from '../../../../assets/iconsCustom/Svgs';
 import { useParams, useSearchParams } from 'react-router-dom';
@@ -12,6 +13,7 @@ import { useTranslation } from 'react-i18next';
 import './BookView.css';
 
 const BookView: React.FC = () => {
+  const navigate = useNavigate();
   const [collapseIcon, setCollapseIcon] = useState<boolean>(false);
   const [collapsableSidebar, setCollapsableSidebar] = useState<boolean>(false);
   const [AllBooks, setAllBooks] = useState<BookInterface[]>([]);
@@ -44,17 +46,9 @@ const BookView: React.FC = () => {
     : 0;
 
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
     if (allBooksData && allBooksData?.data?.length) {
       getAllBooks();
     }
-    window.addEventListener('resize', handleWindowResize);
-    return () => {
-      window.removeEventListener('resize', handleWindowResize);
-    };
   }, [allBooksData]);
 
   function getAllBooks() {
@@ -75,6 +69,18 @@ const BookView: React.FC = () => {
       setAllBooks(allBooksData?.data || []);
     }
   }
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+
+    window.addEventListener('resize', handleWindowResize);
+    return () => {
+      window.removeEventListener('resize', handleWindowResize);
+    };
+  }, [allBooksData]);
+
   const handleWindowResize = () => {
     setKey(Math.floor(Math.random() * 100) + 1);
 
@@ -82,20 +88,7 @@ const BookView: React.FC = () => {
   };
 
   const browserBack = () => {
-    console.log('before back');
-    history.back();
-
-    console.log('after back');
-  };
-
-  const handleZoom = (zoomValue: number) => {
-    if (parentRendition) {
-      parentRendition.themes.default({
-        p: { 'font-size': `${zoomValue + 16}px !important` },
-      });
-
-      currentCfi && parentRendition.display(currentCfi);
-    }
+    navigate('/home');
   };
 
   const onChapterChange = (chapter: string) => {
@@ -125,6 +118,7 @@ const BookView: React.FC = () => {
       chapter: newChapterHref || '',
     }));
   };
+
   const handleBackward = () => {
     if (!proceedNext) return;
     setProceedNext(false);
@@ -136,6 +130,7 @@ const BookView: React.FC = () => {
     setProceedNext(false);
     !disableFroward && parentRendition?.next();
   };
+
   return (
     <PrimaryLayout key={key}>
       <Row className="mainContainer">
@@ -163,7 +158,7 @@ const BookView: React.FC = () => {
             onMouseEnter={() => setCollapseIcon(true)}
             onClick={() => {
               setCollapsableSidebar(!collapsableSidebar);
-              // setKey(Math.floor(Math.random() * 100) + 1);
+              setKey(Math.floor(Math.random() * 100) + 1);
               setCollapseIcon(false);
             }}
             onMouseLeave={() => setCollapseIcon(false)}
@@ -191,6 +186,7 @@ const BookView: React.FC = () => {
               </Tooltip>
             )}
           </div>
+
           <Spin
             spinning={!proceedNext}
             delay={300}
@@ -241,7 +237,6 @@ const BookView: React.FC = () => {
               <BookFooter
                 totalChapters={allBooksChapters[currentBookIndex]}
                 currentChapterIndex={currentChapterIndex}
-                handleZoom={handleZoom}
                 onChapterChange={onChapterChange}
                 progress={progress}
                 proceedNext={proceedNext}

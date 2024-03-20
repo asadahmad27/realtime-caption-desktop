@@ -98,6 +98,7 @@ const Navbar = () => {
   const handleDropdownVisibleChange = (visible: boolean) => {
     setDropdownVisible(visible);
   };
+
   const handleSearchButton = (): void => {
     console.log('clicked handlesearchbutton');
     if (searchText.trim().length > 2) {
@@ -114,6 +115,7 @@ const Navbar = () => {
       setEmptySearch(true);
     }
   };
+
   const checkForClick = (e: MouseEvent) => {
     const isClickedInside = openDropDown.current?.contains(e.target as Node);
 
@@ -126,9 +128,11 @@ const Navbar = () => {
   const closeBooksDropDown = () => {
     document.addEventListener('click', checkForClick);
   };
+
   const handleInputFocus = () => {
     setInputFocused(true);
   };
+
   const removeEventListener = () => {
     document.removeEventListener('click', checkForClick);
   };
@@ -144,12 +148,14 @@ const Navbar = () => {
       setSelectedLanguage('French');
     }
   };
+
   const menuProps = {
     items,
     onClick: handleMenuClick,
     selectable: true,
     defaultSelectedKeys: language === 'fr' ? ['2'] : ['1'],
   };
+
   const handleSearch = (e: React.KeyboardEvent<HTMLInputElement>): void => {
     e.currentTarget.value.length && setEmptySearch(false);
     if (e.key === 'Enter') {
@@ -168,6 +174,7 @@ const Navbar = () => {
       }
     }
   };
+
   const handleSearchText = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchText(e.target.value);
   };
@@ -177,11 +184,12 @@ const Navbar = () => {
       setVisible(!visible);
     }
   };
+
   const handleLogout = () => {};
 
   const menu = (
     <Menu onClick={handleHamBurgerIconClick} className="navbarMenu">
-      <Menu.Item key="1" onClick={() => navigate('/')}>
+      <Menu.Item key="1" onClick={() => navigate('/home')}>
         {t('Home')}
       </Menu.Item>
       <Menu.Item key="2" onClick={() => navigate('/annotations')}>
@@ -198,6 +206,7 @@ const Navbar = () => {
       </Menu.Item>
     </Menu>
   );
+
   return (
     <>
       <Header className="navbar">
