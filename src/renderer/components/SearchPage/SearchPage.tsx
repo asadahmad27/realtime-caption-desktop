@@ -354,7 +354,7 @@ const SearchPage: React.FC = () => {
   };
 
   const browserBack = () => {
-    navigate('/home');
+    navigate(-1);
   };
 
   function colsValueForBookSection(
