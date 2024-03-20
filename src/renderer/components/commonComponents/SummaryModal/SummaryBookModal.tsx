@@ -29,20 +29,13 @@ const SummaryBookModal: React.FC<SummaryBookModalProps> = ({
   const [showFullDescription, setShowFullDescription] = useState(false);
 
   const [currentBookReadCount, setCurrentBookReadCount] = useState<number>(0);
-  const closeModal = () => {
-    // setShowModal(false);
-    dispatch(sidebarChange());
-  };
+
   const navigate = useNavigate();
 
   useEffect(() => {
     if (bookData?._id) {
       getBookCounts();
     }
-  }, [bookData]);
-
-  useEffect(() => {
-    console.log('ddddddddd', bookData);
   }, [bookData]);
 
   const toggleDescription = () => {
@@ -91,9 +84,6 @@ const SummaryBookModal: React.FC<SummaryBookModalProps> = ({
         </div>
         <div className="meta">
           <p className="bookTitle">{bookData.bookName}</p>
-          {/* <p className="author">
-            {t('By')} {bookData.authorName}
-          </p> */}
         </div>
         <div className="PreviewDescription">
           <p className="desc" style={{ maxHeight: '200px', overflowY: 'auto' }}>

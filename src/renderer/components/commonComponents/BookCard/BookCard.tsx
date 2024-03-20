@@ -3,7 +3,7 @@ import { Card } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { getBookReadCount, updateBookReadCount } from '../../../utils/api';
+import { updateBookReadCount } from '../../../utils/api';
 import defaultCover from '../../../../../assets/BookCardDefaultPic.svg';
 import { BookInterface, bookReadCounts } from '../../../utils/interfaces';
 import { StarOutlined, MoreOutlined } from '@ant-design/icons';
@@ -65,6 +65,7 @@ const BookCard: React.FC<BookCardProps> = ({ bookData }) => {
     }
     dispatch(sidebarChange());
   };
+
   return (
     <>
       <Card

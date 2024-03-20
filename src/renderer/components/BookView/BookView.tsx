@@ -46,17 +46,9 @@ const BookView: React.FC = () => {
     : 0;
 
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
     if (allBooksData && allBooksData?.data?.length) {
       getAllBooks();
     }
-    window.addEventListener('resize', handleWindowResize);
-    return () => {
-      window.removeEventListener('resize', handleWindowResize);
-    };
   }, [allBooksData]);
 
   function getAllBooks() {
@@ -77,6 +69,18 @@ const BookView: React.FC = () => {
       setAllBooks(allBooksData?.data || []);
     }
   }
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+
+    window.addEventListener('resize', handleWindowResize);
+    return () => {
+      window.removeEventListener('resize', handleWindowResize);
+    };
+  }, [allBooksData]);
+
   const handleWindowResize = () => {
     setKey(Math.floor(Math.random() * 100) + 1);
 
@@ -84,19 +88,7 @@ const BookView: React.FC = () => {
   };
 
   const browserBack = () => {
-    console.log('before back');
-    navigate('/');
-    console.log('after back');
-  };
-
-  const handleZoom = (zoomValue: number) => {
-    if (parentRendition) {
-      parentRendition.themes.default({
-        p: { 'font-size': `${zoomValue + 16}px !important` },
-      });
-
-      currentCfi && parentRendition.display(currentCfi);
-    }
+    navigate('/home');
   };
 
   const onChapterChange = (chapter: string) => {
@@ -126,6 +118,7 @@ const BookView: React.FC = () => {
       chapter: newChapterHref || '',
     }));
   };
+
   const handleBackward = () => {
     if (!proceedNext) return;
     setProceedNext(false);
@@ -137,6 +130,7 @@ const BookView: React.FC = () => {
     setProceedNext(false);
     !disableFroward && parentRendition?.next();
   };
+
   return (
     <PrimaryLayout key={key}>
       <Row className="mainContainer">
@@ -192,6 +186,7 @@ const BookView: React.FC = () => {
               </Tooltip>
             )}
           </div>
+
           <Spin
             spinning={!proceedNext}
             delay={300}
@@ -242,7 +237,6 @@ const BookView: React.FC = () => {
               <BookFooter
                 totalChapters={allBooksChapters[currentBookIndex]}
                 currentChapterIndex={currentChapterIndex}
-                // handleZoom={handleZoom}
                 onChapterChange={onChapterChange}
                 progress={progress}
                 proceedNext={proceedNext}

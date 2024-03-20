@@ -46,6 +46,7 @@ const Home = () => {
   const [selectedBook, setSelectedBook] = useState<BookInterface>({});
   const [compilationBookClicked, setCompilationBookClicked] =
     useState<boolean>(false);
+
   const handleShowDrawer = (
     bookData: BookInterface,
     compilations?: boolean,

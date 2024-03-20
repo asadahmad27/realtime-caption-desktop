@@ -96,6 +96,7 @@ const SearchPage: React.FC = () => {
           searchBooks.includes(item.bookLink as CheckboxValueType),
         );
       }
+
       setSearching(true);
       const bookIndexWithSearchResults = await handleMultiBooksSearch(
         searchText || '',
@@ -141,6 +142,7 @@ const SearchPage: React.FC = () => {
       // setOldBookAndChapter(currentBookAndChapter);
     }
   };
+
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -154,6 +156,7 @@ const SearchPage: React.FC = () => {
       window.removeEventListener('resize', handleWindowResize);
     };
   }, [allBooksResponse]);
+
   const handleWindowResize = () => {
     setKey(Math.floor(Math.random() * 100) + 1);
   };
