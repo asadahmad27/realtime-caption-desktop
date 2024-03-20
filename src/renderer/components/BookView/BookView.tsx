@@ -78,14 +78,14 @@ const BookView: React.FC = () => {
     }
   }
   const handleWindowResize = () => {
-    // setKey(Math.floor(Math.random() * 100) + 1);
+    setKey(Math.floor(Math.random() * 100) + 1);
 
     setParentRendition(null);
   };
 
   const browserBack = () => {
     console.log('before back');
-    navigate('/home');
+    navigate('/');
     console.log('after back');
   };
 
@@ -164,7 +164,7 @@ const BookView: React.FC = () => {
             onMouseEnter={() => setCollapseIcon(true)}
             onClick={() => {
               setCollapsableSidebar(!collapsableSidebar);
-              // setKey(Math.floor(Math.random() * 100) + 1);
+              setKey(Math.floor(Math.random() * 100) + 1);
               setCollapseIcon(false);
             }}
             onMouseLeave={() => setCollapseIcon(false)}
@@ -242,7 +242,7 @@ const BookView: React.FC = () => {
               <BookFooter
                 totalChapters={allBooksChapters[currentBookIndex]}
                 currentChapterIndex={currentChapterIndex}
-                handleZoom={handleZoom}
+                // handleZoom={handleZoom}
                 onChapterChange={onChapterChange}
                 progress={progress}
                 proceedNext={proceedNext}

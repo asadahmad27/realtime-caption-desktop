@@ -130,6 +130,7 @@ const Sidebar: React.FC<sidebarProps> = ({
 
       try {
         const toc = await singleBook.loaded.navigation;
+
         const modifiedToc = toc.toc.slice();
         modifiedToc.splice(1, 2); // Remove second and third items
 

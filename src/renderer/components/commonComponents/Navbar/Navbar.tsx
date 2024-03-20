@@ -181,7 +181,7 @@ const Navbar = () => {
 
   const menu = (
     <Menu onClick={handleHamBurgerIconClick} className="navbarMenu">
-      <Menu.Item key="1" onClick={() => navigate('/')}>
+      <Menu.Item key="1" onClick={() => navigate('/home')}>
         {t('Home')}
       </Menu.Item>
       <Menu.Item key="2" onClick={() => navigate('/annotations')}>

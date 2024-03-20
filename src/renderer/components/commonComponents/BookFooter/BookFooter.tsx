@@ -12,7 +12,7 @@ interface BookFooterProps {
   totalChapters: NavItem[];
   currentChapterIndex: string;
   onChapterChange: (chapter: string) => void;
-  handleZoom: (zoomStyle: number) => void;
+  // handleZoom: (zoomStyle: number) => void;
   progress: number;
   proceedNext: boolean;
   setProceedNext: React.Dispatch<React.SetStateAction<boolean>>;
