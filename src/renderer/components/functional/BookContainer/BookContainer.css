@@ -32,10 +32,16 @@
     cursor: pointer;
 }
 
+
+
 .pageNumbersFooter p {
     font-size: 0.9rem;
     font-family: "Liberation Serif", serif;
     margin: auto 0 3px 0;
+}
+
+.page1 {
+    background-color: transparent;
 }
 
 .pageNumbersFooter {

@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { updateBookReadCount } from '../../../utils/api';
 import defaultCover from '../../../../../assets/BookCardDefaultPic.svg';
+import { StarFilledLogo } from '../../../../../assets/iconsCustom/Svgs';
 import { BookInterface, bookReadCounts } from '../../../utils/interfaces';
 import { StarOutlined, MoreOutlined } from '@ant-design/icons';
 import { sidebarChange } from '../../../redux/search/SearchBooksSlice';
@@ -25,6 +26,7 @@ const BookCard: React.FC<BookCardProps> = ({ bookData }) => {
   const [menuVisible, setMenuVisible] = useState(false);
   const [currentBookReadCount, setCurrentBookReadCount] = useState<number>(0);
   const [showSummaryModal, setShowSummaryModal] = useState(false);
+  const [starSelected, setStarSelected] = useState(false);
   const [compilationBookClicked, setCompilationBookClicked] =
     useState<boolean>(false);
   const [ref, isComponentVisible, setIsComponentVisible] =
@@ -65,6 +67,9 @@ const BookCard: React.FC<BookCardProps> = ({ bookData }) => {
     }
     dispatch(sidebarChange());
   };
+  const toggleStar = () => {
+    setStarSelected(!starSelected);
+  };
 
   return (
     <>
@@ -79,7 +84,7 @@ const BookCard: React.FC<BookCardProps> = ({ bookData }) => {
               style={{ width: '100%' }}
             />
             <div className="topLeftIcon">
-              <StarOutlined />
+              <StarFilledLogo />
             </div>
             <div className="topRightIcon" ref={ref}>
               <div className="dropdown">

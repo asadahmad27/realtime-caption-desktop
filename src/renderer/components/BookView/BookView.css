@@ -1,12 +1,26 @@
-.bookContainer {
+.bookContainerBgWhite {
     margin: 30px;
     background: #fff;
     border-radius: 12px;
     overflow: auto;
 }
 
+.bookContainerBgTransparent {
+    margin: 30px;
+    border-radius: 12px;
+    overflow: auto;
+}
+
 .bookReadBack {
     margin: 30px 0 0 30px;
+}
+
+.annotationsButton .ant-btn {
+    background-color: transparent;
+    width: 27px;
+    height: 26px;
+    padding: 1px 6px !important;
+    cursor: pointer;
 }
 
 .previousPage {
@@ -31,7 +45,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 97%;
+    height: 80%;
 }
 
 .nextPage:hover svg,

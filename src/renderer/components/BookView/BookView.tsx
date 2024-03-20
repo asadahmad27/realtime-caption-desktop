@@ -2,6 +2,7 @@ import { Col, Row, Button, Spin, Tooltip } from 'antd';
 import { BookFooter, Sidebar } from '../commonComponents';
 import { BookContainer, PrimaryLayout } from '../../components/functional';
 import { useEffect, useState } from 'react';
+import { DoubleRightOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
 import { BookInterface, bookInfo } from '../../utils/interfaces';
 import { LeftArrow } from '../../../../assets/iconsCustom/Svgs';
@@ -205,7 +206,13 @@ const BookView: React.FC = () => {
                 </div>
               </Col>
               <Col md={collapsableSidebar ? 20 : 18}>
-                <div className="bookContainer">
+                <div
+                  className={`${
+                    currentChapterIndex === '0'
+                      ? 'bookContainerBgTransparent'
+                      : 'bookContainerBgWhite'
+                  }`}
+                >
                   <BookContainer
                     currentBookAndChapter={currentBookAndChapter}
                     setCurrentChapterIndex={setCurrentChapterIndex}
@@ -223,6 +230,14 @@ const BookView: React.FC = () => {
                 </div>
               </Col>
               <Col md={collapsableSidebar ? 2 : 3}>
+                <div
+                  className="annotationsButton bookReadBack"
+                  onClick={browserBack}
+                >
+                  <Button icon={<DoubleRightOutlined />}> </Button>
+
+                  {/* <span>{t('Back')}</span> */}
+                </div>
                 <div className={`nextPage `}>
                   <Button onClick={handleForward} disabled={disableFroward}>
                     <GrNext />
