@@ -185,8 +185,8 @@
     "webpack-merge": "^5.9.0"
   },
   "build": {
-    "productName": "AAb Books",
-    "appId": "org.erb.ElectronReact",
+    "productName": "Realtime Caption V2",
+    "appId": "org.erb.RealTimeCaptionV2",
     "asar": true,
     "asarUnpack": "**\\*.{node,dll}",
     "files": [

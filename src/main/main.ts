@@ -9,7 +9,13 @@
  * `./src/main.js` using webpack. This gives us some performance wins.
  */
 import path from 'path';
-import { app, BrowserWindow, shell, ipcMain } from 'electron';
+import {
+  app,
+  BrowserWindow,
+  shell,
+  ipcMain,
+  systemPreferences,
+} from 'electron';
 import { autoUpdater } from 'electron-updater';
 import log from 'electron-log';
 import MenuBuilder from './menu';
@@ -20,7 +26,7 @@ import { resolveHtmlPath } from './util';
 // ipcMain.on('get-env-variables', (event) => {
 //   event.returnValue = {
 //     REACT_APP_API_URL: process.env.REACT_APP_API_URL ,
- 
+
 //   };
 // });
 
@@ -39,7 +45,6 @@ ipcMain.on('ipc-example', async (event, arg) => {
   console.log(msgTemplate(arg));
   event.reply('ipc-example', msgTemplate('pong'));
 });
-
 
 if (process.env.NODE_ENV === 'production') {
   const sourceMapSupport = require('source-map-support');
@@ -93,6 +98,34 @@ const createWindow = async () => {
 
   mainWindow.loadURL(resolveHtmlPath('index.html'));
 
+  const hasCameraAccess = await systemPreferences.askForMediaAccess('camera');
+  const hasMicrophoneAccess =
+    await systemPreferences.askForMediaAccess('microphone');
+
+  if (!hasCameraAccess || !hasMicrophoneAccess) {
+    console.log('Media access denied');
+    // return; // Exit the function if permissions are not granted
+  }
+
+  // Listen for the renderer process to request loading the external URL
+  ipcMain.on('load-external-url', async (event, args) => {
+    const hasCameraAccess = await systemPreferences.askForMediaAccess('camera');
+    const hasMicrophoneAccess =
+      await systemPreferences.askForMediaAccess('microphone');
+
+    if (!hasCameraAccess || !hasMicrophoneAccess) {
+      console.log('Media access denied');
+      // return; // Exit the function if permissions are not granted
+    }
+
+    const URI = 'http://ec2-3-21-205-201.us-east-2.compute.amazonaws.com:8000/';
+    const { url } = args;
+    // Here you can also implement additional security checks if needed
+    if (mainWindow) {
+      mainWindow.loadURL(URI);
+    }
+  });
+
   mainWindow.on('ready-to-show', () => {
     if (!mainWindow) {
       throw new Error('"mainWindow" is not defined');
@@ -138,15 +171,13 @@ app.on('window-all-closed', () => {
   }
 });
 
-
 ipcMain.on('navigate-back', (event) => {
   const window = BrowserWindow.getFocusedWindow();
-  console.log("hello i am in mainjs")
+  console.log('hello i am in mainjs');
   if (window) {
     window.webContents.goBack();
   }
 });
-
 
 app
   .whenReady()
